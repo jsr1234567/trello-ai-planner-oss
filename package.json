@@ -1,0 +1,26 @@
+{
+  "name": "trello-ai-planner",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A self-hosted planner that connects Trello, Google Calendar, and optional AI and messaging integrations.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "google:calendar:auth": "node scripts/google-calendar-auth.js",
+    "google:planner:authorize": "node scripts/authorize-google-planner.mjs",
+    "knowledge:index": "node scripts/index-knowledge.js",
+    "check": "node --check src/*.js && node --check scripts/*.mjs",
+    "check:public": "node scripts/check-public-release.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "googleapis": "^173.0.0",
+    "openai": "^5.12.0"
+  }
+}
